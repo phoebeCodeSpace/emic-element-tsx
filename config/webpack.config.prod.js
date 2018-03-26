@@ -220,9 +220,7 @@ module.exports = {
                         ],
                       },
                     },
-                    {
-                      loader: require.resolve('less-loader')
-                    }
+                    require.resolve('less-loader')
                   ],
                 },
                 extractTextPluginOptions
