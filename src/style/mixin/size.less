@@ -1,0 +1,13 @@
+.size(@width; @height:@width) {
+  width: @width;
+  height: @height;
+}
+
+.square(@size) {
+  .size(@size; @size);
+}
+
+.round(@size){
+  .square(@size);
+  border-radius: 50%;
+}

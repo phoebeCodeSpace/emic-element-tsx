@@ -1,0 +1,38 @@
+.clearfix() {
+  zoom: 1;
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+  }
+}
+.full-sreen(){
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.center-translate( @direction )when( @direction = "both" ){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+.center-translate( @direction )when( @direction = "x" ){
+    position: absolute;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+}
+.center-translate( @direction )when( @direction = "y" ){
+    position: absolute;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+}
