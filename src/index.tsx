@@ -10,6 +10,8 @@ import {
 import registerServiceWorker from './registerServiceWorker';
 
 import './style/base/reset.less';
+import './style/index.less';
+import './views/index.less';
 
 ReactDOM.render(
   <div>

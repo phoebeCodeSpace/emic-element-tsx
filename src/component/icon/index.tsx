@@ -1,9 +1,11 @@
 import * as React from 'react';
-import '../../assets/fonts/iconfont.less';
+import { prefixCls } from '../../utils/config';
+import { classNames } from '../../utils/assist';
 
 export interface IconProps {
   type: string;
   onClick?: (e: React.MouseEvent<HTMLElement>) => void;
+  className?: string;
 }
 
 export default class Icon extends React.Component<IconProps> {
@@ -14,8 +16,13 @@ export default class Icon extends React.Component<IconProps> {
     }
   }
   render() {
+    const { className, type } = this.props;
+    const classes = classNames(className, {
+      [`icon-${type}`]: type,
+      [`${prefixCls}-icon`]: true
+    });
     return (
-      <i className={`iconfont icon-${this.props.type}`} onClick={this.handleClick}/>
+      <i className={classes} onClick={this.handleClick}/>
     );
   }
 }

@@ -4,8 +4,6 @@ import Icon from '../icon';
 import { prefixCls } from '../../utils/config';
 import { classNames } from '../../utils/assist';
 
-import './index.less';
-
 export type ButtonType = 'primary' | 'info' | 'danger';
 export type ButtonSize = 'small' | 'default' | 'large';
 

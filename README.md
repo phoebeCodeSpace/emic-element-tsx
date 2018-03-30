@@ -1,7 +1,15 @@
 # emic-element-tsx
 
-## docs
+> 一个星期写一个组件中
 
-``` bash
-  docsify serve docs
-```
+## widgets
+
+basic
+
+- [x] icon
+- [ ] button
+
+feedback
+
+- [ ] alert
+- [ ] modal

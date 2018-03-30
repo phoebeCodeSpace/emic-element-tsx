@@ -1,8 +1,8 @@
 # modal
 
-👀 [source](///)
+👀 [预览源代码](https://github.com/phoebeCodeSpace/emic-element-tsx/blob/master/src/component/modal/index.tsx)
 
-👀 [preview](///)
+👀 [预览效果图](https://phoebecodespace.github.io/emic-element-tsx/dist/#/modal)
 
 ## 使用方法
 

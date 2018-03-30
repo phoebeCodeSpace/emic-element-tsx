@@ -1,0 +1,54 @@
+@alert-prefix-cls : ~"@{prefix}-alert";
+
+.@{alert-prefix-cls} {
+    display: flex;
+    width: 100%;
+    padding: @alert-padding;
+    color: @text-color;
+    border-radius: @alert-border-radius;
+    line-height: 1;
+    [class*=~"@{prefix}-icon"]{
+      margin-right: 10px;
+      vertical-align: middle;
+      font-weight: bold;
+    }
+
+    @types:info,success,warning,error;
+    @len: length(@types);
+    
+    .typesLoop(@counter) when (@counter > 0) {
+      .typesLoop((@counter - 1));
+      @name:extract(@types, @counter);
+      &-@{name} {
+        @color: "@{name}-color";
+        background-color:tint(@@color,@alert-bg-lighten);
+        border: 1px solid @@color;
+        
+        [class*=~"@{prefix}-icon"]{
+          color: @@color;
+        }
+      }
+    }
+    .typesLoop(@len);
+
+    .icon-close{
+      margin-right: 0;
+      color: #999;
+      cursor: pointer;
+    }
+    &-box{
+      flex: 1;
+      word-break: break-word;
+    }
+    &&-banner{
+      @icon-size:36px;
+      [class*=~"@{prefix}-icon"]{
+        font-size: @icon-size;
+      }
+      .@{alert-prefix-cls}-message{
+        line-height: @icon-size;
+        color: @title-color;
+        margin-bottom: 5px;
+      }      
+    }
+}

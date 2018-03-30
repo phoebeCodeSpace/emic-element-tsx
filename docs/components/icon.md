@@ -4,7 +4,15 @@
 
 ## API
 
+### 属性
+
 参数 |说明 | 类型 | 默认值
----|--- |--- |--- 
-row 1 col 1 | row 1 col 2 | |
-row 2 col 1 | row 2 col 2 | |
+---|--- |--- |---
+type | icon类型 | string | -
+className | 添加类名 | string | -
+
+### 事件
+
+参数 |说明 | 参数
+---|--- |---
+onClick | icon点击事件 | e (React.MouseEvent<HTMLAnchorElement>)

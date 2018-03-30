@@ -3,14 +3,17 @@
 // color 
 @white-color: #fff;
 @primary-color: #4cabe9;
+@info-color: @primary-color;
 @success-color: #6ed739;
 @warning-color: #ffb31a;
 @danger-color: #fe4e4e;
-@info-color: #909399;
-@link-color: #4cabe9;
+@error-color: @danger-color;
+
+@link-color: @primary-color;
 @title-color: #303133;
 @text-color: #606265;
-@error-color: #fe4e4e;
+@descri-color: #909399;
+
 @background-color: #f8f9fd;
 @border-color: #d8dce5; // use for button/input border
 @border-hover-color:  fade(#000, 85%);
@@ -31,9 +34,10 @@
 @btn-padding-lg: 12px 18px;
 @btn-radius-lg:4px; 
 
-
-// @iconfont-css-prefix    : anticon;
-
+// alert
+@alert-padding : 8px 15px;
+@alert-bg-lighten : 65%;
+@alert-border-radius : 5px;
 
 // modal
 @modal-z-index: 1000;

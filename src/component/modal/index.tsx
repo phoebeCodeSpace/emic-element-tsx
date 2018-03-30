@@ -5,8 +5,6 @@ import Icon from '../icon';
 import { prefixCls } from '../../utils/config';
 import { classNames } from '../../utils/assist';
 
-import './index.less';
-
 export interface AppProps {
   modalPrefixCls?: string;
   visible?: boolean;
