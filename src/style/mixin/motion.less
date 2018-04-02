@@ -1,0 +1,70 @@
+.motion-common(@duration: @animation-duration-base) {
+  animation-duration: @duration;  
+  animation-fill-mode: both;
+}
+.make-motion(@className, @keyframeName){
+  .@{className} {
+    &-enter,&-appear{
+      .motion-common;
+      animation-play-state: paused;
+    }
+    &-enter&-enter-active,&-appear&-appear-active{
+      .motion-common;      
+      animation-name: "@{keyframeName}In";
+      animation-play-state: running;     
+    }
+    &-leave{
+      .motion-common;      
+      animation-duration: @animation-duration-base;      
+    }
+    &-leave&-leave-active{
+      .motion-common;      
+      animation-name: "@{keyframeName}Out" ;
+    }
+  }
+}
+
+.make-motion(fade,Fade);
+.make-motion(slide-up,SlideUp);
+
+@keyframes FadeIn{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes FadeOut{
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes SlideUpIn{
+  0% {
+    opacity: 0;
+    transform: translateY(-20%);
+    transform-origin: 0% 0%;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    transform-origin: 0% 0%;
+  }
+}
+@keyframes SlideUpOut{
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+    transform-origin: 0% 0%;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20%);
+    transform-origin: 0% 0%;
+  }
+}
+

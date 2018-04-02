@@ -10,4 +10,4 @@ basic
 feedback
 
 - [ ] alert
-- [ ] modal
+- [x] modal

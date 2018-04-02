@@ -4,3 +4,4 @@
 * feedback
   * [alert](components/alert.md)
   * [modal](components/modal.md)
+  * [notification](components/notification.md)
