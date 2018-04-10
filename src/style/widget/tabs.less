@@ -1,0 +1,55 @@
+@tabs-prefix: ~"@{prefix}-tabs";
+
+@tab-bar-transition :left cubic-bezier(0.25, 0.71, 1, 1) .35s;
+@tab-content-transition :margin-left cubic-bezier(0.25, 0.71, 1, 1) .4s;
+
+.@{tabs-prefix}{
+  overflow: hidden;
+  color: @text-color;
+  &-bar-wrap{
+    position: relative;
+    .active-bar{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      background: @primary-color;
+      transition: @tab-bar-transition;
+    }
+    &>ul{
+      font-size: 0;
+      border-bottom: 1px solid @border-color;
+      &>.@{tabs-prefix}-bar-item{
+        display: inline-block;
+        padding: @tabs-bar-size;
+        font-size: 14px;
+        cursor: pointer;
+        transition: @tab-bar-transition;        
+        &+li{
+          margin-left: 20px;
+        }
+        &.active{
+          color: @primary-color;
+        }
+        &.disabled{
+          color: tint(@text-color,@disabled-shade-percent);
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+  &-content-wrap{
+    transition: @tab-content-transition;    
+    display: flex;
+    will-change: margin-left;
+    flex-direction: row;
+  }
+  &-content-item{
+    width: 100%;
+    opacity: 0;
+    padding: @tabs-content-size;
+    &.active{
+      opacity: 1;
+    }
+  }
+}

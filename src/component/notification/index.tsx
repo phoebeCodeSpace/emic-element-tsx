@@ -1,36 +1,34 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+// import * as ReactDOM from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-
-// import PropTypes from 'prop-types';
-// import Icon from '../icon';
-// import { prefixCls } from '../../utils/config';
-// import { classNames } from '../../utils/assist';
+import { NotificationPlacement } from './types';
 import Notice from './Notice';
 
-
-export interface NotificationProps {
+interface NotificationProps {
   title: string | React.ReactNode;
   description?: string | React.ReactNode;
   duration?: number | null;
+  placement?: NotificationPlacement;
+  getContainer?: React.ReactNode;
 }
 
-export interface NotificationState {
+interface NotificationState {
   visible: boolean;
 }
 
 class Notification extends React.Component<NotificationProps, NotificationState> {
+
   static defaultProps = {
     duration: 3.5
   };
   static propTypes = {
-    
+
   };
   constructor(props: NotificationProps) {
     super(props);
 
     this.state = {
-      visible : true
+      visible: true
     };
   }
   componentDidMount() {
@@ -41,9 +39,9 @@ class Notification extends React.Component<NotificationProps, NotificationState>
           this.setState({
             visible: false
           });
-        }, 
+        },
         duration * 1000
-      );      
+      );
     }
   }
   componentDidLeave() {
@@ -53,8 +51,6 @@ class Notification extends React.Component<NotificationProps, NotificationState>
     const self = this;
     const { title, description } = this.props;
     const { visible } = this.state;
-    // const noticePrefixCls = `${prefixCls}-notice`;
-    // const classes = classNames()
     const transitionProps = {
       transitionName: 'slide-up',
       transitionEnterTimeout: 500,
@@ -62,9 +58,9 @@ class Notification extends React.Component<NotificationProps, NotificationState>
     };
     const noticeProps = {
       title, description,
-      close(value: boolean){ 
+      close(value: boolean) {
         self.setState({
-          visible: value         
+          visible: value
         });
       }
     };
@@ -72,22 +68,20 @@ class Notification extends React.Component<NotificationProps, NotificationState>
       <ReactCSSTransitionGroup {...transitionProps}>
         {
           visible ?
-          <Notice {...noticeProps}/>
-          :
-          null
+            <Notice {...noticeProps} />
+            :
+            null
         }
       </ReactCSSTransitionGroup>
     );
   }
 }
-const div = document.createElement('div');
 
-export default {
-  info(opts: NotificationProps) {
-    document.body.appendChild(div);
-    const defaultProps = {
-      ...opts
-    };
-    return ReactDOM.render(<Notification {...defaultProps}/>, div);
-  }
-};
+// const newInstance = (properties: NotificationProps) => {
+//   const { getContainer, ...props } = properties;
+//   const div = document.createElement('div');
+
+//   ReactDOM.render(<Notification {...props}/>, div);
+// };
+
+export default Notification;

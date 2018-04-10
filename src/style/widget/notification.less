@@ -1,5 +1,29 @@
-@notification-prefix: ~"@{prefix}-notice";
+@notification-prefix: ~"@{prefix}-notification";
+
+@notification-padding: 20px;
 
 .@{notification-prefix} {
-  
+  position: relative;
+  display: flex;
+  width: 500px;
+  padding: @notification-padding;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  border-radius: 10px;
+
+  &-content{
+    h4{
+      font-weight: 500;
+      padding-right: @notification-padding;
+    }
+    p{
+      color: @text-color;
+    }
+  }
+
+  .icon-close.@{prefix}-icon{
+    position: absolute;
+    right: @notification-padding;
+    top: @notification-padding; 
+    cursor: pointer;
+  }
 }

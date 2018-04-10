@@ -1,0 +1,57 @@
+// import * as React from 'react';
+// import * as ReactDOM from 'react-dom';
+
+// import PropTypes from 'prop-types';
+// import Icon from '../icon';
+// import { prefixCls } from '../../utils/config';
+// import { classNames } from '../../utils/assist';
+// import { NotificationPlacement } from './types';
+import * as Notification from './Notification';
+
+
+// 默认配置
+// let defaultTop = 24;
+// let defaultBottom = 24;
+
+// function getPlacementStyle(placement: NotificationPlacement) {
+//   let style;
+//   switch (placement) {
+//     case 'topLeft':
+//       style = {
+//         top: defaultTop,
+//         left : 0
+//       };
+//       break;
+//     case 'bottomLeft':
+//       style = {
+//         left: 0,
+//         bottom: defaultBottom
+//       };
+//       break;
+//     case 'bottomRight':
+//       style = {
+//         right: 0,
+//         bottom: defaultBottom
+//       };
+//       break;
+//     default:
+//       style = {
+//         top: defaultTop,
+//         right: 0
+//       };
+//       break;
+//   }
+//   return style;
+// }
+
+export default {
+  info() {
+    console.log(Notification.newInstance());
+    // Notification.newInstance();
+//     // getContainer();
+//     const defaultProps = {
+//       ...opts
+//     };
+//     return ReactDOM.render(<Notification {...defaultProps}/>, div);
+  }
+};

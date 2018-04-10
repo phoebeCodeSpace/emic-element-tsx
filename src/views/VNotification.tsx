@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Notification } from '../component';
+// import { Notification } from '../component';
 
 export interface AppProps {
 }
@@ -15,11 +15,12 @@ export default class VNotification extends React.Component<AppProps, AppState> {
     // }
   }
   componentDidMount() {
-    console.log('Notification');
-    Notification.info({
-      title: '134',
-      duration: null
-    });
+    // Notification.info({
+    //   title: '134',
+    //   duration: null,
+    //   description: '详细说明'
+    // });
+    // Notification();
   }
   render() {
     // const noticeProps = {

@@ -4,6 +4,7 @@ import VModal from '../views/VModal';
 import VAlert from '../views/VAlert';
 import VAnimate from '../views/VAnimate';
 import VNotification from '../views/VNotification';
+import VTabs from '../views/VTabs';
 
 const routes = [
   {
@@ -35,6 +36,11 @@ const routes = [
     name: 'notification',
     path: '/notification',
     component: VNotification
+  },
+  {
+    name: 'tabs',
+    path: '/tabs',
+    component: VTabs
   },
 ];
 
